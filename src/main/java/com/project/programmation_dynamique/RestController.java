@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("*")
 public class RestController {
 
     @RequestMapping(value = "/retrait/{option}", method = RequestMethod.GET)
