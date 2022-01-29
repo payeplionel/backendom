@@ -19,68 +19,75 @@ public class RestController {
                 Objet objet = new Objet(i, 0);
                 if (i < 6501) {
                     objet.setValeur((float)(i * 3) / 100);
-                    if(i>=montant){
-                        fraitInitial=(float)(i * 3) / 100;
-                    }
                 }
                 if ((i >= 6501) && (i < 10001)) {
-                    objet.setValeur(180);
+                    double v = (180) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=(float)(i * 3) / 100;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 10001) && (i < 13501)) {
-                    objet.setValeur(300);
+                    double v = (300) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=300;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 13501) && (i < 25001)) {
-                    objet.setValeur(350);
+                    double v = (350) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=350;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 25001) && (i < 50001)) {
-                    objet.setValeur(700);
+                    double v = (700) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=700;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 50001) && (i < 80001)) {
-                    objet.setValeur(1350);
+                    double v = (1350) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=1350;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 80001) && (i < 100001)) {
-                    objet.setValeur(1800);
+                    double v = (1800) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=1800;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 100001) && (i < 200001)) {
-                    objet.setValeur(2150);
+                    double v = (2150) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=2150;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 200001) && (i < 300001)) {
-                    objet.setValeur(2600);
+                    double v = (2600) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=2600;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 300001) && (i < 400001)) {
-                    objet.setValeur(3100);
+                    double v = (3100) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=3100;
+                        fraitInitial=(float) v;
                     }
                 }
                 if (i >= 400001) {
-                    objet.setValeur(3600);
+                    double v = (3600) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=3600;
+                        fraitInitial=(float) v;
                     }
                 }
                 objets.add(objet);
@@ -111,7 +118,12 @@ public class RestController {
 
 
             System.out.println("les frais minimums pour la somme : " + montant + " est : " + cache[montant]);
-            String a = "{\"initial\":\""+fraitInitial+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+            String a  = "";
+            if(fraitInitial==0){
+                a = "{\"initial\":\""+cache[montant]+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+            }else{
+                a = "{\"initial\":\""+fraitInitial+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+            }
             a=a+"\"sommes\": [";
 
             while (retirer > 0) {
@@ -135,68 +147,75 @@ public class RestController {
                 Objet objet = new Objet(i, 0);
                 if (i < 6000) {
                     objet.setValeur((float) (i * 3) / 100);
-                    if(i>=montant && fraitInitial==0){
-                        fraitInitial=(float) (i * 3) / 100;
-                    }
                 }
                 if ((i >= 6000) && (i < 10051)) {
-                    objet.setValeur(175);
+                    double v = (175) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=175;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 10051) && (i < 13551)) {
-                    objet.setValeur(300);
+                    double v = (300) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=300;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 13551) && (i < 25051)) {
-                    objet.setValeur(350);
+                    double v = (350) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=350;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 25051) && (i < 50051)) {
-                    objet.setValeur(700);
+                    double v = (700) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=700;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 50051) && (i < 75101)) {
-                    objet.setValeur(1350);
+                    double v = (1350) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=1350;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 75101) && (i < 100101)) {
-                    objet.setValeur(1800);
+                    double v = (1800) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=1800;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 100101) && (i < 200501)) {
-                    objet.setValeur(2150);
+                    double v = (2150) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=2150;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 200501) && (i < 300501)) {
-                    objet.setValeur(2600);
+                    double v = (2600) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=2600;
+                        fraitInitial=(float) v;
                     }
                 }
                 if ((i >= 300501) && (i < 400501)) {
-                    objet.setValeur(3100);
+                    double v = (3100) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=3100;
+                        fraitInitial=(float) v;
                     }
                 }
                 if (i >= 400501) {
-                    objet.setValeur(3500);
+                    double v = (3500) + ((i * 0.2) / 100);
+                    objet.setValeur((float) v);
                     if(i>=montant && fraitInitial==0){
-                        fraitInitial=3500;
+                        fraitInitial=(float) v;
                     }
                 }
                 objets.add(objet);
@@ -225,9 +244,15 @@ public class RestController {
             float retirer = montant;
             System.out.println("pour " + montant + " vous devez retirer :");
 
+            String a = "";
+            if(fraitInitial==0){
+                a = "{\"initial\":\""+cache[montant]+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+            }else{
+                a = "{\"initial\":\""+fraitInitial+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+            }
 
             System.out.println("les frais minimums pour la somme : " + montant + " est : " + cache[montant]);
-            String a = "{\"initial\":\""+fraitInitial+"\",\"montant\":\""+montant+"\",\"frais\":\""+cache[montant]+"\",";
+
             a=a+"\"sommes\": [";
 
             while (retirer > 0) {
