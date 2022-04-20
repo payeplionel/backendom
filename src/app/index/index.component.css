@@ -1,0 +1,64 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    margin-top: 10vh;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h2 {
+    font-size: large;
+}
+
+.orange:hover {
+    background-color: orange;
+}
+
+.yellow:hover {
+    background-color: yellow;
+}
+
+.org {
+    background-color: violet;
+}
+
+.yell {
+    background-color: skyblue  ;
+}
+
+
+.solution-block {
+    min-height: 25vh;
+    padding: 10px;
+}
+
+.choice {
+    width: 60vw;
+}
+
+.inpt {
+    width: 50vw;
+}
+
+.frais {
+    padding-top: 15px;
+}
+
+.block-om{
+    min-height: 160vh;
+    background-image: url(../../assets/img/orange.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.block-momo{
+    min-height: 160vh;
+    background-image: url(../../assets/img/momo.png);
+    background-repeat: no-repeat;
+
+}
